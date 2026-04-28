@@ -13,7 +13,7 @@ import javax.swing.*;
 
 /**
  *
- * @author cucchiarini.cesare
+ * @author Bernicchi.davidemaria
  */
 public class FrameProgetto extends javax.swing.JFrame {
     
@@ -34,12 +34,13 @@ public class FrameProgetto extends javax.swing.JFrame {
         
         modelClassi = new DefaultComboBoxModel();
         JComboBox boxClassi = new JComboBox(modelClassi);
-        boxClassi.setBorder(BorderFactory.createEmptyBorder(0, 300, 0, 300));
+        boxClassi.setBorder(BorderFactory.createEmptyBorder(0, 650, 0, 650));
         boxClassi.addActionListener(new ActionListener(){
             @Override 
             public void actionPerformed(ActionEvent e){
                 modelStudenti.clear();
                 modelStudenti.addAll(DBManager.leggiStudenti(((String)boxClassi.getSelectedItem()).substring(0, 2)));
+                //modelStudenti.addAll(DBManager.leggiGite(((String)boxClassi.getSelectedItem()).substring(0, 2)));
             }
         });
         

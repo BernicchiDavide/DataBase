@@ -53,4 +53,25 @@ public class DBManager {
         }
         return null;
     }
+    public static ArrayList<String> leggiGite(String idClasse){
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:scuola.db");
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT nome, cognome, id_alunni FROM alunni");
+            ArrayList<String> gite = new ArrayList();
+            
+            while(rs.next()){
+                
+                if(rs.getString("id_classe").equals(idClasse))
+                    gite.add(rs.getString("nome") + " " + rs.getString("cognome") + " " + rs.getString("gita"));
+            
+            }
+            
+            return gite;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

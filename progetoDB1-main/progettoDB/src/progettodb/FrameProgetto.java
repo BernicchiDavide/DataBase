@@ -39,8 +39,8 @@ public class FrameProgetto extends javax.swing.JFrame {
             @Override 
             public void actionPerformed(ActionEvent e){
                 modelStudenti.clear();
-                modelStudenti.addAll(DBManager.leggiStudenti(((String)boxClassi.getSelectedItem()).substring(0, 2)));
-                //modelStudenti.addAll(DBManager.leggiGite(((String)boxClassi.getSelectedItem()).substring(0, 2)));
+                //modelStudenti.addAll(DBManager.leggiStudenti(((String)boxClassi.getSelectedItem()).substring(0, 2)));
+                modelStudenti.addAll(DBManager.leggiGite(((String)boxClassi.getSelectedItem()).substring(0, 2)));
             }
         });
         

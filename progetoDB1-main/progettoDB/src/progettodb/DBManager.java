@@ -57,13 +57,14 @@ public class DBManager {
         try {
             Connection conn = DriverManager.getConnection("jdbc:sqlite:scuola.db");
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT nome, cognome, id_alunni FROM alunni");
+            ResultSet rs = st.executeQuery("SELECT * FROM partecipanti");
+            //ResultSet rsa = st.executeQuery("SELECT * FROM alunni");
             ArrayList<String> gite = new ArrayList();
             
             while(rs.next()){
                 
-                if(rs.getString("id_classe").equals(idClasse))
-                    gite.add(rs.getString("nome") + " " + rs.getString("cognome") + " " + rs.getString("gita"));
+                //if(rs.getString("id_gita").equals("id_gita"))
+                gite.add(rs.getString("id_gita") + " " + rs.getString("destinazione")/*+ rsa.getString("nome")*/);
             
             }
             
